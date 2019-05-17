@@ -25,6 +25,8 @@ public class User {
 	@NotEmpty
 	private String username;
 
+	private String photo;
+
 	@NotNull
 	@NotEmpty
 	private String password;
@@ -59,6 +61,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public String getPassword() {

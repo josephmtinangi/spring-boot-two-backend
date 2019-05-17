@@ -45,11 +45,13 @@ public class TokenAuthenticationService {
 				@SuppressWarnings("unchecked")
 				HashMap<String, Object> userDetails = (HashMap<String, Object>) claim.get("userDetails");
 
-				if (userDetails.get("id") != null && userDetails.get("username") != null) {
+				if (userDetails.get("id") != null && userDetails.get("username") != null
+						&& userDetails.get("photo") != null) {
 					Long id = Long.parseLong(userDetails.get("id").toString());
 					String username = userDetails.get("username").toString();
+					String photo = userDetails.get("photo").toString();
 
-					UserContext userContext = new UserContext(id, username);
+					UserContext userContext = new UserContext(id, username, photo);
 
 					return new UsernamePasswordAuthenticationToken(userContext, null, new ArrayList<>());
 				} else {

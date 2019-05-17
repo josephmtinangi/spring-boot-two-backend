@@ -38,7 +38,7 @@ public class JWTAuthenticationProvider implements AuthenticationProvider {
 			throw new BadCredentialsException("Authentication failed. Incorrect username or password.");
 		}
 
-		UserContext userContext = new UserContext(user.getId(), user.getUsername());
+		UserContext userContext = new UserContext(user.getId(), user.getUsername(), user.getPhoto());
 
 		return new UsernamePasswordAuthenticationToken(userContext, null, Collections.emptyList());
 	}
